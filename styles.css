@@ -34,17 +34,6 @@
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Mode - Luxury Variant */
-body.light-mode {
-    --bg-primary: #faf9f7;        /* Off-White */
-    --bg-secondary: #f0ede8;      /* Light Cream */
-    --bg-tertiary: #e8e3db;       /* Beige */
-    --text-primary: #1a1a1e;      /* Near Black */
-    --text-secondary: #4a4a52;    /* Dark Gray */
-    --text-muted: #8a8a92;        /* Medium Gray */
-    --border: #d4c9b9;            /* Light Gold Border */
-}
-
 * {
     margin: 0;
     padding: 0;

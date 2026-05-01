@@ -290,22 +290,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== THEME TOGGLE ==========
-
-function toggleTheme() {
-    const body = document.body;
-    body.classList.toggle('light-mode');
-    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
-}
-
-// Load saved theme on page load
-window.addEventListener('load', function() {
-    const savedTheme = localStorage.getItem('theme');
-    if (savedTheme === 'light') {
-        document.body.classList.add('light-mode');
-    }
-});
-
 // ========== BUTTON INTERACTIONS ==========
 
 // Add ripple effect to buttons
