@@ -3,46 +3,46 @@
    ======================================== */
 
 :root {
-    /* Primary Colors */
-    --primary: #8b5cf6;
-    --primary-dark: #7c3aed;
-    --primary-light: #a78bfa;
+    /* Luxury Black & Gold Palette */
+    --primary: #D4AF37;           /* Rich Gold */
+    --primary-dark: #B8931F;      /* Deep Gold */
+    --primary-light: #E8C547;     /* Bright Gold */
     
     /* Secondary & Accent */
-    --secondary: #ec4899;
-    --accent: #06b6d4;
+    --secondary: #8B1A1A;         /* Deep Burgundy */
+    --accent: #1B4D3E;            /* Emerald Green */
     
-    /* Backgrounds */
-    --bg-primary: #0f0f1e;
-    --bg-secondary: #1a1a2e;
-    --bg-tertiary: #252541;
+    /* Backgrounds - Deep Black */
+    --bg-primary: #0a0a0e;        /* Deep Black */
+    --bg-secondary: #1a1a24;      /* Charcoal */
+    --bg-tertiary: #2a2a38;       /* Dark Slate */
     
-    /* Text */
-    --text-primary: #ffffff;
-    --text-secondary: #b0b0c8;
-    --text-muted: #78788f;
+    /* Text Colors */
+    --text-primary: #f8f8f8;      /* Bright White */
+    --text-secondary: #c9c9d6;    /* Silver */
+    --text-muted: #8a8a99;        /* Muted Gray */
     
     /* Border & Shadows */
-    --border: #2a2a42;
-    --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.3);
-    --shadow-md: 0 8px 24px rgba(0, 0, 0, 0.4);
-    --shadow-lg: 0 16px 40px rgba(0, 0, 0, 0.5);
-    --shadow-xl: 0 24px 56px rgba(0, 0, 0, 0.6);
-    --glow: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, transparent 70%);
+    --border: #3a3a48;            /* Dark Border */
+    --shadow-sm: 0 2px 12px rgba(212, 175, 55, 0.1);
+    --shadow-md: 0 8px 24px rgba(212, 175, 55, 0.15);
+    --shadow-lg: 0 16px 40px rgba(212, 175, 55, 0.2);
+    --shadow-xl: 0 24px 56px rgba(212, 175, 55, 0.25);
+    --glow: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, transparent 70%);
     
     /* Transitions */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-/* Light Mode */
+/* Light Mode - Luxury Variant */
 body.light-mode {
-    --bg-primary: #ffffff;
-    --bg-secondary: #f5f5f5;
-    --bg-tertiary: #e8e8f0;
-    --text-primary: #1a1a2e;
-    --text-secondary: #6b6b7f;
-    --text-muted: #a0a0b0;
-    --border: #e0e0e8;
+    --bg-primary: #faf9f7;        /* Off-White */
+    --bg-secondary: #f0ede8;      /* Light Cream */
+    --bg-tertiary: #e8e3db;       /* Beige */
+    --text-primary: #1a1a1e;      /* Near Black */
+    --text-secondary: #4a4a52;    /* Dark Gray */
+    --text-muted: #8a8a92;        /* Medium Gray */
+    --border: #d4c9b9;            /* Light Gold Border */
 }
 
 * {
@@ -105,14 +105,16 @@ p {
 }
 
 .btn-primary {
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
-    color: white;
-    box-shadow: 0 0 20px rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, var(--primary), #f0d96b);
+    color: #0a0a0e;
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.3);
+    font-weight: 700;
 }
 
 .btn-primary:hover {
     transform: translateY(-2px);
-    box-shadow: 0 0 30px rgba(139, 92, 246, 0.4);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, #f0d96b, var(--primary));
 }
 
 .btn-secondary {
@@ -122,9 +124,9 @@ p {
 }
 
 .btn-secondary:hover {
-    background: rgba(139, 92, 246, 0.1);
-    border-color: var(--secondary);
-    color: var(--secondary);
+    background: rgba(212, 175, 55, 0.1);
+    border-color: var(--primary-light);
+    color: var(--primary-light);
 }
 
 .btn-large {
@@ -170,7 +172,7 @@ p {
     gap: 0.75rem;
     font-size: 1.5rem;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -179,6 +181,7 @@ p {
 
 .logo svg {
     stroke: var(--primary);
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
 }
 
 .nav-menu {
@@ -246,8 +249,8 @@ p {
 .badge {
     display: inline-block;
     padding: 0.75rem 1.5rem;
-    background: rgba(139, 92, 246, 0.1);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    background: rgba(212, 175, 55, 0.1);
+    border: 1px solid rgba(212, 175, 55, 0.3);
     border-radius: 50px;
     font-size: 0.9rem;
     color: var(--primary);
@@ -315,21 +318,21 @@ p {
     top: 0;
     width: 20px;
     height: 100%;
-    background: linear-gradient(135deg, #5a3c9f, #6b47b8);
+    background: linear-gradient(135deg, #8B1A1A, #B8931F);
     border-radius: 4px 0 0 4px;
 }
 
 .book-cover {
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.2), rgba(236, 72, 153, 0.1));
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 26, 26, 0.1));
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(139, 92, 246, 0.3);
+    border: 2px solid rgba(212, 175, 55, 0.4);
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-    box-shadow: 0 20px 60px rgba(139, 92, 246, 0.2);
+    box-shadow: 0 20px 60px rgba(212, 175, 55, 0.2);
 }
 
 .book-content {
@@ -388,8 +391,8 @@ p {
 
 .service-card {
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.03));
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
     transition: var(--transition);
     position: relative;
@@ -411,7 +414,8 @@ p {
 
 .service-card:hover {
     transform: translateY(-8px);
-    border-color: rgba(139, 92, 246, 0.4);
+    border-color: rgba(212, 175, 55, 0.5);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(139, 26, 26, 0.05));
 }
 
 .service-card:hover::before {
@@ -421,13 +425,14 @@ p {
 .service-icon {
     width: 50px;
     height: 50px;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--primary-dark));
     border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
     margin-bottom: 1.5rem;
-    color: white;
+    color: #0a0a0e;
+    font-weight: 700;
 }
 
 .service-card h3 {
@@ -474,22 +479,22 @@ p {
 
 .step-card {
     padding: 2rem;
-    background: rgba(139, 92, 246, 0.05);
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: rgba(212, 175, 55, 0.05);
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
     transition: var(--transition);
 }
 
 .step-card:hover {
     transform: translateY(-4px);
-    background: rgba(139, 92, 246, 0.1);
+    background: rgba(212, 175, 55, 0.1);
 }
 
 .step-number {
     font-size: 3rem;
     font-family: 'Fraunces', serif;
     font-weight: 700;
-    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -528,9 +533,10 @@ p {
 }
 
 .filter-btn.active {
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), #f0d96b);
     border-color: var(--primary);
-    color: white;
+    color: #0a0a0e;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.4);
 }
 
 .filter-btn:hover {
@@ -638,7 +644,7 @@ p {
     transform: translate(-50%, -50%);
     width: 70px;
     height: 70px;
-    background: rgba(139, 92, 246, 0.9);
+    background: rgba(212, 175, 55, 0.9);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -646,27 +652,29 @@ p {
     opacity: 1;
     transition: var(--transition);
     z-index: 10;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
 .video-play-button::after {
     content: '';
     width: 0;
     height: 0;
-    border-left: 20px solid white;
+    border-left: 20px solid #0a0a0e;
     border-top: 13px solid transparent;
     border-bottom: 13px solid transparent;
     margin-left: 4px;
 }
 
 .video-testimonial:hover .video-play-button {
-    background: rgba(139, 92, 246, 1);
+    background: rgba(212, 175, 55, 1);
     transform: translate(-50%, -50%) scale(1.1);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.6);
 }
 
 .video-meta {
     padding: 1.5rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
 }
 
@@ -688,19 +696,19 @@ p {
 
 .testimonial-card {
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
     transition: var(--transition);
 }
 
 .testimonial-card:hover {
     transform: translateY(-4px);
-    border-color: rgba(139, 92, 246, 0.4);
+    border-color: rgba(212, 175, 55, 0.4);
 }
 
 .stars {
-    color: #fbbf24;
+    color: var(--primary);
     margin-bottom: 1rem;
     font-size: 1.2rem;
 }
@@ -733,8 +741,8 @@ p {
 
 .pricing-card {
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.05), rgba(236, 72, 153, 0.02));
-    border: 1px solid rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.02));
+    border: 1px solid rgba(212, 175, 55, 0.2);
     border-radius: 12px;
     transition: var(--transition);
     position: relative;
@@ -742,9 +750,9 @@ p {
 
 .pricing-card.featured {
     transform: scale(1.05);
-    background: linear-gradient(135deg, rgba(139, 92, 246, 0.15), rgba(236, 72, 153, 0.05));
-    border-color: rgba(139, 92, 246, 0.4);
-    box-shadow: 0 0 40px rgba(139, 92, 246, 0.2);
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 26, 26, 0.05));
+    border-color: rgba(212, 175, 55, 0.4);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
 }
 
 .badge-popular {
@@ -752,8 +760,8 @@ p {
     top: -15px;
     right: 20px;
     padding: 0.5rem 1rem;
-    background: var(--primary);
-    color: white;
+    background: linear-gradient(135deg, var(--primary), #f0d96b);
+    color: #0a0a0e;
     border-radius: 50px;
     font-size: 0.8rem;
     font-weight: 700;
