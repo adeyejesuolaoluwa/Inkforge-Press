@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Inkforge - Master Your Fictional Universe</title>
-    <meta name="description" content="Notion × Scrivener × RPG system for serious fiction writers. Organize characters, lore, and storylines. Build complex worlds without losing clarity.">
+    <title>Inkforge Press - Professional Book Publishing & Author Services</title>
+    <meta name="description" content="Complete book publishing services: editing, formatting, publishing, marketing, and reviews. Bring your manuscript to bestseller status.">
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,11 +15,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/feather-icons/4.29.0/feather.min.js"></script>
     
-    <link rel="stylesheet" href="styles-new.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body class="dark-mode">
     
-    <!-- Navigation -->
+    <!-- ========== NAVIGATION ========== -->
     <nav class="navbar" id="navbar">
         <div class="nav-wrapper">
             <div class="nav-content">
@@ -28,20 +28,20 @@
                         <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
                         <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
                     </svg>
-                    <span>Inkforge</span>
+                    <span>Inkforge Press</span>
                 </div>
                 
                 <ul class="nav-menu" id="navMenu">
-                    <li><a href="#product" class="nav-link">Product</a></li>
-                    <li><a href="#features" class="nav-link">Features</a></li>
+                    <li><a href="#services" class="nav-link">Services</a></li>
                     <li><a href="#how-it-works" class="nav-link">How It Works</a></li>
+                    <li><a href="#portfolio" class="nav-link">Portfolio</a></li>
                     <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
                     <li><a href="#pricing" class="nav-link">Pricing</a></li>
                 </ul>
                 
                 <div class="nav-actions">
                     <button class="btn btn-secondary">Sign In</button>
-                    <button class="btn btn-primary">Start Free</button>
+                    <button class="btn btn-primary">Get Started</button>
                 </div>
                 
                 <button class="hamburger" id="hamburger">
@@ -53,468 +53,369 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section id="product" class="hero">
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero" id="hero">
         <div class="hero-content">
-            <div class="hero-badge">✨ The writing system for serious creators</div>
+            <div class="badge">📖 Publishing Made Professional</div>
+            <h1 class="hero-title">From Manuscript to Bestseller</h1>
+            <p class="hero-subtitle">Complete book publishing services: editing, formatting, marketing, reviews, and distribution. We've helped hundreds of authors achieve their publishing dreams.</p>
             
-            <h1 class="hero-title">Master Your Fictional Universe</h1>
-            
-            <p class="hero-subtitle">
-                Organize characters, lore, and storylines in one interconnected system. 
-                Build complex worlds without losing clarity. Think Notion, Scrivener, and RPG mechanics combined.
-            </p>
-            
-            <div class="hero-cta">
-                <button class="btn btn-primary btn-large">Start Building Free</button>
-                <button class="btn btn-secondary btn-large">Watch Demo</button>
+            <div class="hero-ctas">
+                <button class="btn btn-primary btn-large">Start Your Journey</button>
+                <button class="btn btn-secondary btn-large">View Our Services</button>
             </div>
-            
-            <div class="hero-meta">
-                <div class="meta-item">
-                    <strong>5,000+</strong> writers using Inkforge
+
+            <div class="hero-stats">
+                <div class="stat">
+                    <span class="stat-number" data-target="500">0</span>
+                    <span class="stat-label">Books Published</span>
                 </div>
-                <div class="meta-item">
-                    <strong>2M+</strong> words organized
+                <div class="stat">
+                    <span class="stat-number" data-target="1200">0</span>
+                    <span class="stat-label">Happy Authors</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number" data-target="45">0</span>
+                    <span class="stat-label">Bestsellers</span>
                 </div>
             </div>
         </div>
-        
+
         <div class="hero-visual">
-            <div class="product-mockup">
-                <div class="mockup-frame">
-                    <div class="mockup-content">
-                        <div class="mockup-sidebar">
-                            <div class="sidebar-item active"></div>
-                            <div class="sidebar-item"></div>
-                            <div class="sidebar-item"></div>
-                            <div class="sidebar-item"></div>
-                        </div>
-                        <div class="mockup-main">
-                            <div class="content-block"></div>
-                            <div class="content-block short"></div>
-                            <div class="content-block"></div>
-                        </div>
+            <div class="book-mockup">
+                <div class="book-spine"></div>
+                <div class="book-cover">
+                    <div class="book-content">
+                        <p>Your Story</p>
+                        <p class="subtitle">Beautifully Published</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem Section -->
-    <section class="problem">
+    <!-- ========== CORE SERVICES SECTION ========== -->
+    <section class="services" id="services">
         <div class="section-header">
-            <h2>The Writing Problem</h2>
-            <p>Every fiction writer faces the same challenges</p>
+            <h2>Our Core Services</h2>
+            <p>Everything your book needs to succeed</p>
         </div>
-        
-        <div class="problem-grid">
-            <div class="problem-card">
-                <div class="problem-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <circle cx="12" cy="12" r="10"></circle>
-                        <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-                        <line x1="9" y1="9" x2="9.01" y2="9"></line>
-                        <line x1="15" y1="9" x2="15.01" y2="9"></line>
-                    </svg>
-                </div>
-                <h3>Scattered Information</h3>
-                <p>Characters in documents, timelines in spreadsheets, lore in notebooks. Chaos.</p>
-            </div>
-            
-            <div class="problem-card">
-                <div class="problem-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                </div>
-                <h3>Connection Blindness</h3>
-                <p>Miss critical plot holes because character connections aren't visible.</p>
-            </div>
-            
-            <div class="problem-card">
-                <div class="problem-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline>
-                    </svg>
-                </div>
-                <h3>Progress Lost</h3>
-                <p>No unified view of your world. Hard to track what you've written and what's left.</p>
-            </div>
-            
-            <div class="problem-card">
-                <div class="problem-icon">
-                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-                    </svg>
-                </div>
-                <h3>Inconsistency Risk</h3>
-                <p>Character details drift. Timelines contradict. Readers notice. You lose credibility.</p>
-            </div>
-        </div>
-    </section>
 
-    <!-- Solution Section -->
-    <section class="solution">
-        <div class="section-header">
-            <h2>Meet Inkforge</h2>
-            <p>The unified system for world-builders</p>
-        </div>
-        
-        <div class="solution-content">
-            <div class="solution-text">
-                <h3>Everything Connected.</h3>
-                <p>
-                    Inkforge brings Notion's flexibility, Scrivener's organization, and RPG-style world-building into one unified system.
-                </p>
-                
-                <ul class="solution-features">
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span><strong>Character System:</strong> Build detailed characters with relationships, arcs, and dependencies</span>
-                    </li>
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span><strong>Timeline Engine:</strong> Track events, causes, and effects across your world</span>
-                    </li>
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span><strong>Lore Database:</strong> Organize mythology, rules, and world systems with full-text search</span>
-                    </li>
-                    <li>
-                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 6 9 17 4 12"></polyline>
-                        </svg>
-                        <span><strong>Visual Mapping:</strong> See character connections, plot threads, and world structure at a glance</span>
-                    </li>
+        <div class="services-grid">
+            <!-- Service: Editing -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="edit-3"></i>
+                </div>
+                <h3>Professional Editing</h3>
+                <p>Developmental, line, and copy editing by award-winning editors. Polish your manuscript to perfection.</p>
+                <ul class="service-features">
+                    <li>Developmental editing</li>
+                    <li>Line-by-line editing</li>
+                    <li>Copy editing & proofreading</li>
                 </ul>
             </div>
-            
-            <div class="solution-visual">
-                <div class="visual-element">
-                    <div class="graph-visualization">
-                        <div class="node node-1">C</div>
-                        <div class="node node-2">A</div>
-                        <div class="node node-3">L</div>
-                        <div class="node node-4">P</div>
-                        <svg class="connections" viewBox="0 0 200 200">
-                            <line x1="50" y1="50" x2="150" y2="150" stroke="url(#gradient)" stroke-width="2" opacity="0.3"></line>
-                            <line x1="150" y1="50" x2="50" y2="150" stroke="url(#gradient)" stroke-width="2" opacity="0.3"></line>
-                            <defs>
-                                <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                                    <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
-                                    <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
-                                </linearGradient>
-                            </defs>
-                        </svg>
-                    </div>
+
+            <!-- Service: Formatting -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="layout"></i>
                 </div>
+                <h3>Book Formatting</h3>
+                <p>Professional interior and cover design. Print-ready and digital formats for all platforms.</p>
+                <ul class="service-features">
+                    <li>Interior layout design</li>
+                    <li>Cover design</li>
+                    <li>eBook & print optimization</li>
+                </ul>
+            </div>
+
+            <!-- Service: Publishing -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="book-open"></i>
+                </div>
+                <h3>Publishing Services</h3>
+                <p>Guidance through the entire publishing process. Hybrid or self-publishing support with expert direction.</p>
+                <ul class="service-features">
+                    <li>Hybrid publishing support</li>
+                    <li>Self-publishing guidance</li>
+                    <li>ISBN & registration</li>
+                </ul>
+            </div>
+
+            <!-- Service: Marketing -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="trending-up"></i>
+                </div>
+                <h3>Book Marketing</h3>
+                <p>Strategic marketing campaigns to reach your audience. Social media, PR, and launch strategies included.</p>
+                <ul class="service-features">
+                    <li>Marketing strategy</li>
+                    <li>Social media campaigns</li>
+                    <li>Launch planning</li>
+                </ul>
+            </div>
+
+            <!-- Service: Reviews & Visibility -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="star"></i>
+                </div>
+                <h3>Reviews & Visibility</h3>
+                <p>Boost credibility and discoverability. Strategic review placements and promotional visibility.</p>
+                <ul class="service-features">
+                    <li>Review coordination</li>
+                    <li>Bestseller campaigns</li>
+                    <li>Media outreach</li>
+                </ul>
+            </div>
+
+            <!-- Service: Distribution -->
+            <div class="service-card">
+                <div class="service-icon">
+                    <i data-feather="globe"></i>
+                </div>
+                <h3>Distribution</h3>
+                <p>Get your book into bookstores and online retailers worldwide. Amazon, IndieBound, international distribution.</p>
+                <ul class="service-features">
+                    <li>Retail distribution</li>
+                    <li>Amazon optimization</li>
+                    <li>Global reach</li>
+                </ul>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
+    <!-- ========== HOW IT WORKS SECTION ========== -->
+    <section class="how-it-works" id="how-it-works">
         <div class="section-header">
-            <h2>How Inkforge Works</h2>
-            <p>Four simple steps to master your world</p>
+            <h2>Your Publishing Journey</h2>
+            <p>From manuscript to published author in 6 steps</p>
         </div>
-        
-        <div class="steps-grid">
-            <div class="step-card" style="--step-index: 0;">
+
+        <div class="steps-container">
+            <div class="step-card">
                 <div class="step-number">01</div>
-                <h3>Create Entities</h3>
-                <p>Add characters, locations, factions, magic systems, and any element of your world. Define their core properties instantly.</p>
-                <div class="step-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="12" cy="8" r="4"></circle>
-                        <path d="M6 20.5h12c1.1 0 2-.9 2-2v-1c0-2.2-3.6-4-8-4s-8 1.8-8 4v1c0 1.1.9 2 2 2z"></path>
-                    </svg>
-                </div>
+                <h3>Submit Your Manuscript</h3>
+                <p>Send us your manuscript along with your publishing goals and target audience.</p>
             </div>
-            
-            <div class="step-card" style="--step-index: 1;">
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
                 <div class="step-number">02</div>
-                <h3>Build Connections</h3>
-                <p>Link entities together. Show how characters relate, how events trigger consequences, how systems interact.</p>
-                <div class="step-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <circle cx="6" cy="12" r="3"></circle>
-                        <circle cx="18" cy="12" r="3"></circle>
-                        <line x1="9" y1="12" x2="15" y2="12"></line>
-                    </svg>
-                </div>
+                <h3>Consultation</h3>
+                <p>Our team reviews your work and crafts a personalized publishing roadmap.</p>
             </div>
-            
-            <div class="step-card" style="--step-index: 2;">
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
                 <div class="step-number">03</div>
-                <h3>Visualize</h3>
-                <p>See your entire world structure instantly. Graph views show relationships, timelines show causality, dashboards show progress.</p>
-                <div class="step-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <rect x="3" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="3" width="7" height="7"></rect>
-                        <rect x="14" y="14" width="7" height="7"></rect>
-                        <rect x="3" y="14" width="7" height="7"></rect>
-                    </svg>
-                </div>
+                <h3>Editing & Refinement</h3>
+                <p>Professional editors work with you through multiple revision rounds.</p>
             </div>
-            
-            <div class="step-card" style="--step-index: 3;">
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
                 <div class="step-number">04</div>
-                <h3>Write with Confidence</h3>
-                <p>Know your world inside out. Zero plot holes. Perfect consistency. Your readers will feel the difference.</p>
-                <div class="step-icon">
-                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                        <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
-                        <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
-                    </svg>
-                </div>
+                <h3>Design & Formatting</h3>
+                <p>Your book gets professional cover design and interior layout.</p>
+            </div>
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
+                <div class="step-number">05</div>
+                <h3>Launch Campaign</h3>
+                <p>We execute a comprehensive marketing and promotional strategy.</p>
+            </div>
+
+            <div class="step-connector"></div>
+
+            <div class="step-card">
+                <div class="step-number">06</div>
+                <h3>Distribution & Beyond</h3>
+                <p>Your book reaches bookstores, online retailers, and readers worldwide.</p>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
+    <!-- ========== PORTFOLIO SECTION ========== -->
+    <section class="portfolio" id="portfolio">
         <div class="section-header">
-            <h2>Powerful Features Built for Writers</h2>
-            <p>Everything you need to build extraordinary worlds</p>
+            <h2>Published Works</h2>
+            <p>Featuring 15 books we've successfully brought to market</p>
         </div>
-        
-        <div class="features-grid">
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"></path>
-                    </svg>
-                </div>
-                <h3>Smart Search</h3>
-                <p>Find any element across your world in milliseconds</p>
+
+        <div class="portfolio-filters">
+            <button class="filter-btn active" data-filter="all">All Works</button>
+            <button class="filter-btn" data-filter="fiction">Fiction</button>
+            <button class="filter-btn" data-filter="nonfiction">Non-Fiction</button>
+            <button class="filter-btn" data-filter="memoir">Memoir</button>
+        </div>
+
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Books will be loaded here -->
+            <!-- Each book cover image should be in /images/covers/ -->
+            <!-- Format: cover-01.jpg through cover-15.jpg -->
+        </div>
+    </section>
+
+    <!-- ========== VIDEO TESTIMONIALS SECTION ========== -->
+    <section class="testimonials-video" id="testimonials">
+        <div class="section-header">
+            <h2>Author Success Stories</h2>
+            <p>Hear directly from authors whose books we've published</p>
+        </div>
+
+        <div class="video-testimonials-grid" id="videoTestimonialsGrid">
+            <!-- MP4 testimonial videos will be loaded here -->
+            <!-- Place your MP4 files in /videos/testimonials/ -->
+            <!-- Format: testimonial-01.mp4, testimonial-02.mp4 -->
+        </div>
+
+        <div class="testimonials-static">
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"Inkforge Press transformed my manuscript into a bestseller. Their professional guidance and support made all the difference."</p>
+                <p class="testimonial-author">— Sarah Mitchell, Author</p>
             </div>
-            
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="12 3 20 7.5 20 16.5 12 21 4 16.5 4 7.5 12 3"></polyline>
-                    </svg>
-                </div>
-                <h3>Relationship Graph</h3>
-                <p>Visualize complex character and world networks</p>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"The editing team was phenomenal. They understood my vision and made my book better than I ever imagined."</p>
+                <p class="testimonial-author">— James Cooper, Author</p>
             </div>
-            
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                        <line x1="16" y1="2" x2="16" y2="6"></line>
-                        <line x1="8" y1="2" x2="8" y2="6"></line>
-                        <line x1="3" y1="10" x2="21" y2="10"></line>
-                    </svg>
-                </div>
-                <h3>Timeline System</h3>
-                <p>Track events, causes, and consequences across your world</p>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-                    </svg>
-                </div>
-                <h3>Collaboration</h3>
-                <p>Work with co-writers in real-time, with full version control</p>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M12 2v20m10-10H2"></path>
-                    </svg>
-                </div>
-                <h3>Custom Fields</h3>
-                <p>Define exactly what properties matter for your entities</p>
-            </div>
-            
-            <div class="feature-item">
-                <div class="feature-icon">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M21 7v10a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V7m18 0a2 2 0 0 0-2-2h-4l-2-2h-4l-2 2H5a2 2 0 0 0-2 2"></path>
-                    </svg>
-                </div>
-                <h3>API Access</h3>
-                <p>Build custom integrations and extend Inkforge</p>
+
+            <div class="testimonial-card">
+                <div class="stars">★★★★★</div>
+                <p class="testimonial-quote">"From formatting to marketing, every step was handled with professionalism and care. Highly recommended!"</p>
+                <p class="testimonial-author">— Elena Rodriguez, Author</p>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials">
+    <!-- ========== PRICING SECTION ========== -->
+    <section class="pricing" id="pricing">
         <div class="section-header">
-            <h2>Loved by Fiction Writers</h2>
-            <p>See what serious creators are building with Inkforge</p>
+            <h2>Publishing Plans</h2>
+            <p>Flexible packages for every author's needs</p>
         </div>
-        
-        <div class="testimonials-grid">
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"Inkforge transformed how I approach world-building. I went from scattered notes to a complete system in weeks. Essential for serious fiction writers."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">SC</div>
-                    <div>
-                        <strong>Sarah Chen</strong>
-                        <span>Science Fiction Author</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"I manage a complex fantasy universe with 200+ characters and 5 interconnected timelines. Inkforge makes it feel simple. Plot holes? A thing of the past."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">MJ</div>
-                    <div>
-                        <strong>Marcus Johnson</strong>
-                        <span>Fantasy Novelist</span>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="testimonial-card">
-                <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p>"The graph visualization feature alone is worth the subscription. Seeing how my characters and plots connect changed everything."</p>
-                <div class="testimonial-author">
-                    <div class="author-avatar">EA</div>
-                    <div>
-                        <strong>Elena Alvarez</strong>
-                        <span>Mystery Writer</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Pricing Section -->
-    <section id="pricing" class="pricing">
-        <div class="section-header">
-            <h2>Simple, Transparent Pricing</h2>
-            <p>Start free, upgrade when you're ready</p>
-        </div>
-        
         <div class="pricing-grid">
+            <!-- Starter Plan -->
             <div class="pricing-card">
-                <h3>Free</h3>
-                <div class="price">$0</div>
-                <p class="price-desc">Perfect for getting started</p>
-                <ul class="pricing-list">
-                    <li>✓ 1 world</li>
-                    <li>✓ Up to 100 entities</li>
-                    <li>✓ Basic connections</li>
-                    <li>✓ Core features</li>
-                    <li>✗ Timeline system</li>
-                    <li>✗ Advanced visualizations</li>
+                <div class="plan-name">Starter</div>
+                <div class="plan-price">
+                    <span class="currency">$</span>
+                    <span class="amount">499</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ Copy editing</li>
+                    <li>✓ Basic formatting</li>
+                    <li>✓ Cover design (template-based)</li>
+                    <li>✓ ISBN & registration</li>
+                    <li>✗ Marketing support</li>
                 </ul>
-                <button class="btn btn-secondary full-width">Start Free</button>
+                <button class="btn btn-secondary btn-large">Get Started</button>
             </div>
-            
+
+            <!-- Professional Plan (Featured) -->
             <div class="pricing-card featured">
-                <div class="badge">Most Popular</div>
-                <h3>Pro</h3>
-                <div class="price">$12<span>/mo</span></div>
-                <p class="price-desc">For serious world-builders</p>
-                <ul class="pricing-list">
-                    <li>✓ Unlimited worlds</li>
-                    <li>✓ Unlimited entities</li>
-                    <li>✓ Full connection system</li>
-                    <li>✓ Timeline engine</li>
-                    <li>✓ Graph visualization</li>
-                    <li>✓ Advanced search</li>
+                <div class="badge-popular">Most Popular</div>
+                <div class="plan-name">Professional</div>
+                <div class="plan-price">
+                    <span class="currency">$</span>
+                    <span class="amount">1,299</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ Developmental editing</li>
+                    <li>✓ Professional formatting</li>
+                    <li>✓ Custom cover design</li>
+                    <li>✓ Marketing strategy</li>
+                    <li>✓ Social media campaign</li>
+                    <li>✓ Review coordination</li>
                 </ul>
-                <button class="btn btn-primary full-width">Start Free Trial</button>
+                <button class="btn btn-primary btn-large">Choose Plan</button>
             </div>
-            
+
+            <!-- Premium Plan -->
             <div class="pricing-card">
-                <h3>Studio</h3>
-                <div class="price">$29<span>/mo</span></div>
-                <p class="price-desc">For collaborative teams</p>
-                <ul class="pricing-list">
-                    <li>✓ Everything in Pro</li>
-                    <li>✓ 5 team members</li>
-                    <li>✓ Real-time collaboration</li>
-                    <li>✓ Version history</li>
-                    <li>✓ Priority support</li>
-                    <li>✓ API access</li>
+                <div class="plan-name">Premium</div>
+                <div class="plan-price">
+                    <span class="currency">$</span>
+                    <span class="amount">2,499</span>
+                </div>
+                <ul class="plan-features">
+                    <li>✓ All Professional features</li>
+                    <li>✓ PR & media outreach</li>
+                    <li>✓ Bestseller campaign</li>
+                    <li>✓ Global distribution</li>
+                    <li>✓ Audio book production</li>
+                    <li>✓ Ongoing support</li>
                 </ul>
-                <button class="btn btn-secondary full-width">Start Free Trial</button>
+                <button class="btn btn-secondary btn-large">Get Started</button>
             </div>
         </div>
     </section>
 
-    <!-- Final CTA Section -->
+    <!-- ========== FINAL CTA SECTION ========== -->
     <section class="final-cta">
         <div class="cta-content">
-            <h2>Stop Leaving Plot Holes.</h2>
-            <p>Start building your world with the system writers have been asking for.</p>
-            <button class="btn btn-primary btn-large">Begin Your Free World</button>
-            <p class="cta-note">No credit card required. 30-day free trial on Pro features.</p>
+            <h2>Ready to Publish Your Book?</h2>
+            <p>Join hundreds of successful authors who've transformed their manuscripts into published works with Inkforge Press.</p>
+            <button class="btn btn-primary btn-large">Start Your Publishing Journey</button>
+            <p class="cta-note">No credit card required. Free consultation included.</p>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-section">
-                <div class="logo">
-                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
-                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
-                    </svg>
-                    <span>Inkforge</span>
-                </div>
-                <p>The world-building system for fiction writers.</p>
+                <h4>Inkforge Press</h4>
+                <p>Professional book publishing and author services. Bringing stories to life.</p>
             </div>
-            
+
             <div class="footer-section">
-                <h4>Product</h4>
+                <h4>Services</h4>
                 <ul>
-                    <li><a href="#">Features</a></li>
-                    <li><a href="#">Pricing</a></li>
-                    <li><a href="#">Security</a></li>
-                    <li><a href="#">Roadmap</a></li>
+                    <li><a href="#services">Editing</a></li>
+                    <li><a href="#services">Formatting</a></li>
+                    <li><a href="#services">Publishing</a></li>
+                    <li><a href="#services">Marketing</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Company</h4>
                 <ul>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">Contact</a></li>
-                    <li><a href="#">Careers</a></li>
+                    <li><a href="#about">About Us</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                    <li><a href="#blog">Blog</a></li>
+                    <li><a href="#careers">Careers</a></li>
                 </ul>
             </div>
-            
+
             <div class="footer-section">
                 <h4>Legal</h4>
                 <ul>
-                    <li><a href="#">Privacy</a></li>
-                    <li><a href="#">Terms</a></li>
-                    <li><a href="#">Cookies</a></li>
-                    <li><a href="#">GDPR</a></li>
+                    <li><a href="#privacy">Privacy Policy</a></li>
+                    <li><a href="#terms">Terms of Service</a></li>
+                    <li><a href="#contact">Contact Us</a></li>
                 </ul>
             </div>
         </div>
-        
+
         <div class="footer-bottom">
-            <p>&copy; 2026 Inkforge. Crafted for writers, by writers.</p>
+            <p>&copy; 2026 Inkforge Press. All rights reserved.</p>
         </div>
     </footer>
 
-    <script src="script-new.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>

@@ -1,95 +1,282 @@
-/* ====================================== */
-/* INKFORGE - PREMIUM INTERACTIONS */
-/* ====================================== */
+// ===================================
+// INKFORGE PRESS - MAIN SCRIPT
+// ===================================
 
-// Initialize Feather Icons
-feather.replace();
-
-// DOM Elements
-const navbar = document.getElementById('navbar');
-const navMenu = document.getElementById('navMenu');
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.querySelectorAll('.nav-link');
-
-// ========== SCROLL HANDLERS ==========
-let lastScrollY = 0;
-
-window.addEventListener('scroll', () => {
-    lastScrollY = window.scrollY;
-    
-    // Navbar effect
-    if (lastScrollY > 50) {
-        navbar.classList.add('scrolled');
-    } else {
-        navbar.classList.remove('scrolled');
+// Initialize when DOM is ready
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize Feather Icons
+    if (typeof feather !== 'undefined') {
+        feather.replace();
     }
     
-    // Update active nav link
-    updateActiveNavLink();
-    
-    // Trigger animations on scroll
-    animateOnScroll();
-});
-
-// ========== INTERSECTION OBSERVER ==========
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -100px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            observer.unobserve(entry.target);
-        }
-    });
-}, observerOptions);
-
-// Observe all cards and sections
-document.querySelectorAll('.problem-card, .feature-item, .testimonial-card, .pricing-card, .step-card').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(20px)';
-    el.style.transition = 'all 0.6s ease-out';
-    observer.observe(el);
+    // Initialize components
+    initNavigation();
+    initScrollAnimations();
+    initCounterAnimation();
+    initPortfolioGrid();
+    initVideoTestimonials();
 });
 
 // ========== NAVIGATION ==========
-hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-});
 
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    });
-});
-
-function updateActiveNavLink() {
-    let current = '';
-    const sections = document.querySelectorAll('section[id]');
+function initNavigation() {
+    const navbar = document.getElementById('navbar');
+    const hamburger = document.getElementById('hamburger');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = document.querySelectorAll('.nav-menu a');
     
-    sections.forEach(section => {
-        const sectionTop = section.offsetTop;
-        const sectionHeight = section.clientHeight;
-        
-        if (lastScrollY >= sectionTop - 200) {
-            current = section.getAttribute('id');
-        }
+    // Scroll event handler for navbar
+    let scrollTimeout;
+    window.addEventListener('scroll', function() {
+        clearTimeout(scrollTimeout);
+        scrollTimeout = setTimeout(function() {
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }, 10);
     });
     
+    // Hamburger menu toggle
+    if (hamburger) {
+        hamburger.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+            hamburger.classList.toggle('active');
+        });
+    }
+    
+    // Close menu when link is clicked
     navLinks.forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
+        link.addEventListener('click', function() {
+            navMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
+        });
+    });
+    
+    // Close menu on Escape key
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            navMenu.classList.remove('active');
+            if (hamburger) hamburger.classList.remove('active');
         }
     });
 }
 
-// ========== SMOOTH SCROLL ==========
+// ========== SCROLL ANIMATIONS ==========
+
+function initScrollAnimations() {
+    // Intersection Observer for fade-in animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -100px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    // Observe elements
+    const elementsToObserve = document.querySelectorAll(
+        '.service-card, .step-card, .testimonial-card, .pricing-card, .portfolio-item'
+    );
+    
+    elementsToObserve.forEach(el => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(20px)';
+        el.style.transition = 'all 0.6s ease-out';
+        observer.observe(el);
+    });
+}
+
+// ========== COUNTER ANIMATION ==========
+
+function initCounterAnimation() {
+    const counters = document.querySelectorAll('[data-target]');
+    const speed = 200;
+    
+    const runCounter = function(counter) {
+        const target = +counter.getAttribute('data-target');
+        const increment = target / speed;
+        
+        const updateCount = function() {
+            const count = +counter.innerText;
+            
+            if (count < target) {
+                counter.innerText = Math.ceil(count + increment);
+                setTimeout(updateCount, 10);
+            } else {
+                counter.innerText = target;
+            }
+        };
+        
+        updateCount();
+    };
+    
+    // Start animation when element is in view
+    const observerOptions = {
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                runCounter(entry.target);
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+    
+    counters.forEach(counter => observer.observe(counter));
+}
+
+// ========== PORTFOLIO GRID ==========
+
+function initPortfolioGrid() {
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    
+    // Sample portfolio data - Update with your actual book data
+    const portfolioItems = [
+        { id: 1, title: 'Book Title 1', category: 'fiction', image: '/images/covers/cover-01.jpg' },
+        { id: 2, title: 'Book Title 2', category: 'nonfiction', image: '/images/covers/cover-02.jpg' },
+        { id: 3, title: 'Book Title 3', category: 'memoir', image: '/images/covers/cover-03.jpg' },
+        { id: 4, title: 'Book Title 4', category: 'fiction', image: '/images/covers/cover-04.jpg' },
+        { id: 5, title: 'Book Title 5', category: 'nonfiction', image: '/images/covers/cover-05.jpg' },
+        { id: 6, title: 'Book Title 6', category: 'fiction', image: '/images/covers/cover-06.jpg' },
+        { id: 7, title: 'Book Title 7', category: 'memoir', image: '/images/covers/cover-07.jpg' },
+        { id: 8, title: 'Book Title 8', category: 'nonfiction', image: '/images/covers/cover-08.jpg' },
+        { id: 9, title: 'Book Title 9', category: 'fiction', image: '/images/covers/cover-09.jpg' },
+        { id: 10, title: 'Book Title 10', category: 'memoir', image: '/images/covers/cover-10.jpg' },
+        { id: 11, title: 'Book Title 11', category: 'fiction', image: '/images/covers/cover-11.jpg' },
+        { id: 12, title: 'Book Title 12', category: 'nonfiction', image: '/images/covers/cover-12.jpg' },
+        { id: 13, title: 'Book Title 13', category: 'fiction', image: '/images/covers/cover-13.jpg' },
+        { id: 14, title: 'Book Title 14', category: 'memoir', image: '/images/covers/cover-14.jpg' },
+        { id: 15, title: 'Book Title 15', category: 'nonfiction', image: '/images/covers/cover-15.jpg' }
+    ];
+    
+    // Render portfolio grid
+    if (portfolioGrid) {
+        renderPortfolio(portfolioItems);
+        
+        // Filter functionality
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                const filteredItems = filter === 'all' 
+                    ? portfolioItems 
+                    : portfolioItems.filter(item => item.category === filter);
+                
+                renderPortfolio(filteredItems);
+            });
+        });
+    }
+}
+
+function renderPortfolio(items) {
+    const portfolioGrid = document.getElementById('portfolioGrid');
+    portfolioGrid.innerHTML = '';
+    
+    items.forEach((item, index) => {
+        const portfolioItem = document.createElement('div');
+        portfolioItem.className = 'portfolio-item';
+        portfolioItem.style.animationDelay = `${index * 0.05}s`;
+        
+        portfolioItem.innerHTML = `
+            <img src="${item.image}" alt="${item.title}" onerror="this.src='https://via.placeholder.com/200x300?text=${encodeURIComponent(item.title)}'">
+            <div class="portfolio-overlay">
+                <div class="portfolio-info">
+                    <h3>${item.title}</h3>
+                    <p>${capitalizeFirst(item.category)}</p>
+                </div>
+            </div>
+        `;
+        
+        portfolioGrid.appendChild(portfolioItem);
+    });
+}
+
+// ========== VIDEO TESTIMONIALS ==========
+
+function initVideoTestimonials() {
+    const videoGrid = document.getElementById('videoTestimonialsGrid');
+    
+    // Sample video testimonial data
+    // Update these paths with your actual MP4 files
+    const videoTestimonials = [
+        {
+            id: 1,
+            video: '/videos/testimonials/testimonial-01.mp4',
+            author: 'Author Name 1',
+            title: 'Published Author'
+        },
+        {
+            id: 2,
+            video: '/videos/testimonials/testimonial-02.mp4',
+            author: 'Author Name 2',
+            title: 'Bestselling Author'
+        }
+    ];
+    
+    if (videoGrid) {
+        renderVideoTestimonials(videoTestimonials);
+    }
+}
+
+function renderVideoTestimonials(videos) {
+    const videoGrid = document.getElementById('videoTestimonialsGrid');
+    
+    videos.forEach((video, index) => {
+        const videoContainer = document.createElement('div');
+        videoContainer.style.opacity = '0';
+        videoContainer.style.animation = `slideInUp 0.6s ease-out forwards`;
+        videoContainer.style.animationDelay = `${index * 0.1}s`;
+        
+        videoContainer.innerHTML = `
+            <div class="video-testimonial" onclick="playVideo(this)">
+                <video>
+                    <source src="${video.video}" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-play-button"></div>
+            </div>
+            <div class="video-meta">
+                <h4>${video.author}</h4>
+                <p>${video.title}</p>
+            </div>
+        `;
+        
+        videoGrid.appendChild(videoContainer);
+    });
+}
+
+// Play video on click
+function playVideo(element) {
+    const video = element.querySelector('video');
+    const playButton = element.querySelector('.video-play-button');
+    
+    if (video.paused) {
+        video.play();
+        playButton.style.opacity = '0';
+    } else {
+        video.pause();
+        playButton.style.opacity = '1';
+    }
+}
+
+// ========== SMOOTH SCROLL FOR HASH LINKS ==========
+
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -103,234 +290,42 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// ========== BUTTON ANIMATIONS ==========
+// ========== THEME TOGGLE ==========
+
+function toggleTheme() {
+    const body = document.body;
+    body.classList.toggle('light-mode');
+    localStorage.setItem('theme', body.classList.contains('light-mode') ? 'light' : 'dark');
+}
+
+// Load saved theme on page load
+window.addEventListener('load', function() {
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+});
+
+// ========== BUTTON INTERACTIONS ==========
+
+// Add ripple effect to buttons
 document.querySelectorAll('.btn').forEach(button => {
     button.addEventListener('click', function(e) {
-        // Ripple effect
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
         const x = e.clientX - rect.left - size / 2;
         const y = e.clientY - rect.top - size / 2;
         
-        ripple.style.cssText = `
-            position: absolute;
-            width: ${size}px;
-            height: ${size}px;
-            background: rgba(255, 255, 255, 0.5);
-            border-radius: 50%;
-            left: ${x}px;
-            top: ${y}px;
-            pointer-events: none;
-            animation: ripple 0.6s ease-out;
-        `;
+        ripple.style.width = ripple.style.height = size + 'px';
+        ripple.style.left = x + 'px';
+        ripple.style.top = y + 'px';
+        ripple.classList.add('ripple');
         
-        this.style.position = 'relative';
-        this.style.overflow = 'hidden';
         this.appendChild(ripple);
         
         setTimeout(() => ripple.remove(), 600);
     });
 });
 
-// ========== CARD HOVER EFFECTS ==========
-document.querySelectorAll('.problem-card, .feature-item, .testimonial-card, .pricing-card, .step-card').forEach(card => {
-    card.addEventListener('mouseenter', function() {
-        this.style.transition = 'all 0.3s ease-out';
-    });
-});
-
-// ========== PARALLAX EFFECTS ==========
-function updateParallax() {
-    const hero = document.querySelector('.hero');
-    if (hero) {
-        const heroTop = hero.offsetTop;
-        const parallaxElements = hero.querySelectorAll('[data-parallax]');
-        
-        parallaxElements.forEach(el => {
-            const speed = el.dataset.parallax || 0.5;
-            const yPos = (lastScrollY - heroTop) * speed;
-            el.style.transform = `translateY(${yPos}px)`;
-        });
-    }
-}
-
-window.addEventListener('scroll', updateParallax);
-
-// ========== COUNTER ANIMATION ==========
-function animateCounter(element, target, duration = 2000) {
-    const start = 0;
-    const range = target - start;
-    const increment = range / (duration / 16);
-    let current = start;
-    
-    const timer = setInterval(() => {
-        current += increment;
-        if (current >= target) {
-            element.textContent = target + '+';
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(current) + '+';
-        }
-    }, 16);
-}
-
-// ========== ANIMATED ELEMENTS ON SCROLL ==========
-function animateOnScroll() {
-    // Add more sophisticated scroll-based animations here
-    // This could include parallax shifts, element reveals, etc.
-}
-
-// ========== CURSOR FOLLOWER (Premium Touch) ==========
-function createCursorFollower() {
-    const follower = document.createElement('div');
-    follower.style.cssText = `
-        position: fixed;
-        width: 8px;
-        height: 8px;
-        background: linear-gradient(135deg, #8b5cf6, #ec4899);
-        border-radius: 50%;
-        pointer-events: none;
-        z-index: 9999;
-        opacity: 0;
-        transition: opacity 0.2s;
-        box-shadow: 0 0 15px rgba(139, 92, 246, 0.5);
-    `;
-    document.body.appendChild(follower);
-    
-    let mouseX = 0, mouseY = 0;
-    
-    document.addEventListener('mousemove', (e) => {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        follower.style.left = (mouseX - 4) + 'px';
-        follower.style.top = (mouseY - 4) + 'px';
-        follower.style.opacity = '1';
-    });
-    
-    document.addEventListener('mouseleave', () => {
-        follower.style.opacity = '0';
-    });
-    
-    // Remove on touch devices
-    if (window.innerWidth < 768) {
-        follower.remove();
-    }
-}
-
-// ========== ANIMATE ON LOAD ==========
-window.addEventListener('load', () => {
-    // Fade in hero content
-    const heroContent = document.querySelector('.hero-content');
-    if (heroContent) {
-        heroContent.style.animation = 'slideInUp 0.8s ease-out';
-    }
-    
-    // Optional: Create cursor follower
-    createCursorFollower();
-    
-    // Initialize counters
-    setTimeout(() => {
-        const metaItems = document.querySelectorAll('.meta-item strong');
-        metaItems.forEach(item => {
-            const target = parseInt(item.textContent);
-            if (target) {
-                animateCounter(item, target, 1500);
-            }
-        });
-    }, 300);
-});
-
-// ========== MOBILE OPTIMIZATIONS ==========
-if (window.innerWidth < 768) {
-    // Disable animations on mobile for performance
-    document.querySelectorAll('[style*="animation"]').forEach(el => {
-        el.style.animation = 'none';
-    });
-}
-
-// ========== PERFORMANCE: Debounce scroll events ==========
-let scrollTimeout;
-function debounceScroll() {
-    clearTimeout(scrollTimeout);
-    scrollTimeout = setTimeout(() => {
-        updateParallax();
-        animateOnScroll();
-    }, 10);
-}
-
-// ========== KEYBOARD NAVIGATION ==========
-document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-        hamburger.classList.remove('active');
-        navMenu.classList.remove('active');
-    }
-});
-
-// ========== SMOOTH ANIMATIONS ==========
-const style = document.createElement('style');
-style.textContent = `
-    @keyframes ripple {
-        from {
-            opacity: 1;
-            transform: scale(0);
-        }
-        to {
-            opacity: 0;
-            transform: scale(4);
-        }
-    }
-    
-    @keyframes slideInUp {
-        from {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    }
-    
-    @keyframes fadeIn {
-        from { opacity: 0; }
-        to { opacity: 1; }
-    }
-    
-    /* Active nav link */
-    .nav-link.active {
-        color: #8b5cf6;
-    }
-    
-    .nav-link.active::after {
-        width: 100%;
-    }
-    
-    /* Hamburger active state */
-    .hamburger.active span:nth-child(1) {
-        transform: rotate(45deg) translate(8px, 8px);
-    }
-    
-    .hamburger.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .hamburger.active span:nth-child(3) {
-        transform: rotate(-45deg) translate(7px, -7px);
-    }
-    
-    /* Reduce motion respect */
-    @media (prefers-reduced-motion: reduce) {
-        * {
-            animation-duration: 0.01ms !important;
-            animation-iteration-count: 1 !important;
-            transition-duration: 0.01ms !important;
-        }
-    }
-`;
-document.head.appendChild(style);
-
-// ========== CONSOLE MESSAGE ==========
-console.log('%cInkforge', 'font-size: 28px; color: #8b5cf6; font-weight: bold; font-family: Fraunces, serif;');
-console.log('%cMaster Your Fictional Universe', 'font-size: 14px; color: #ec4899; font-family: Geist, sans-serif;');
-console.log('%cBuilt with premium design principles. Every interaction intentional. Every pixel purposeful.', 'font-size: 12px; color: #cbd5e1; font-family: Geist, sans-serif;');
+console.log('Inkforge Press website initialized successfully!');
