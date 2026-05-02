@@ -168,6 +168,14 @@ p {
     font-family: 'Fraunces', serif;
 }
 
+.logo-img {
+    height: 40px;
+    width: auto;
+    border-radius: 8px;
+    object-fit: contain;
+    filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
+}
+
 .logo svg {
     stroke: var(--primary);
     filter: drop-shadow(0 0 8px rgba(212, 175, 55, 0.3));
