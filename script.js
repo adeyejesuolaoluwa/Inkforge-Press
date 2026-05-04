@@ -143,9 +143,9 @@ function initPortfolioGrid() {
     
     // Sample portfolio data - Update with your actual book data
     const portfolioItems = [
-        { id: 1, title: 'Book Title 1', category: 'fiction', image: '/images/covers/cover-01.jpg' },
-        { id: 2, title: 'Book Title 2', category: 'nonfiction', image: '/images/covers/cover-02.jpg' },
-        { id: 3, title: 'Book Title 3', category: 'memoir', image: '/images/covers/cover-03.jpg' },
+        { id: 1, title: 'Book Title 1', category: 'fiction', image: '/images/covers/cover-01.jpeg' },
+        { id: 2, title: 'Book Title 2', category: 'nonfiction', image: '/images/covers/cover-02.jpeg' },
+        { id: 3, title: 'Book Title 3', category: 'memoir', image: '/images/covers/cover-03.jpeg' },
         { id: 4, title: 'Book Title 4', category: 'fiction', image: '/images/covers/cover-04.jpg' },
         { id: 5, title: 'Book Title 5', category: 'nonfiction', image: '/images/covers/cover-05.jpg' },
         { id: 6, title: 'Book Title 6', category: 'fiction', image: '/images/covers/cover-06.jpg' },
