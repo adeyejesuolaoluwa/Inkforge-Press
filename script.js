@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimation();
     initPortfolioGrid();
     initVideoTestimonials();
+    initCarousel();
 });
 
 // ========== NAVIGATION ==========
@@ -289,6 +290,65 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// ========== CAROUSEL ==========
+
+function initCarousel() {
+    const carousel = document.getElementById('carouselSlides');
+    const prevBtn = document.getElementById('prevBtn');
+    const nextBtn = document.getElementById('nextBtn');
+    const indicatorContainer = document.getElementById('indicatorContainer');
+    
+    if (!carousel) return;
+    
+    const slides = carousel.querySelectorAll('.carousel-slide');
+    let currentIndex = 0;
+    
+    // Create indicators
+    slides.forEach((_, index) => {
+        const indicator = document.createElement('div');
+        indicator.className = 'indicator' + (index === 0 ? ' active' : '');
+        indicator.addEventListener('click', () => goToSlide(index));
+        indicatorContainer.appendChild(indicator);
+    });
+    
+    function updateCarousel() {
+        slides.forEach((slide, index) => {
+            slide.classList.remove('active', 'prev');
+            if (index === currentIndex) {
+                slide.classList.add('active');
+            } else if (index < currentIndex) {
+                slide.classList.add('prev');
+            }
+        });
+        
+        // Update indicators
+        document.querySelectorAll('.indicator').forEach((ind, index) => {
+            ind.classList.toggle('active', index === currentIndex);
+        });
+    }
+    
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % slides.length;
+        updateCarousel();
+    }
+    
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+        updateCarousel();
+    }
+    
+    function goToSlide(index) {
+        currentIndex = index;
+        updateCarousel();
+    }
+    
+    prevBtn.addEventListener('click', prevSlide);
+    nextBtn.addEventListener('click', nextSlide);
+    
+    // Auto-advance carousel every 5 seconds
+    setInterval(nextSlide, 5000);
+}
 
 // ========== BUTTON INTERACTIONS ==========
 
