@@ -149,15 +149,13 @@ function initPortfolioGrid() {
     // Portfolio data with actual book covers
     const portfolioItems = [
         { id: 1, title: 'Classic Novel', category: 'fiction', image: '/images/covers/cover-01.jpeg' },
-        { id: 2, title: 'Business Guide', category: 'nonfiction', image: '/images/covers/cover-02.jpeg' },
-        { id: 3, title: 'Life Story', category: 'memoir', image: '/images/covers/cover-03.jpeg' },
-        { id: 4, title: 'Elara Valerius', category: 'fiction', image: '/images/covers/elara_valerius.jpeg' },
-        { id: 5, title: 'Publishing Insights', category: 'nonfiction', image: '/images/covers/IMG-20260502-WA0004.jpg' },
-        { id: 6, title: 'Personal Journey', category: 'memoir', image: '/images/covers/WA_1777715460739.jpeg' },
-        { id: 7, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
-        { id: 8, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
-        { id: 9, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
-        { id: 10, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
+        { id: 2, title: 'Elara Valerius', category: 'fiction', image: '/images/covers/elara_valerius.jpeg' },
+        { id: 3, title: 'Publishing Insights', category: 'nonfiction', image: '/images/covers/IMG-20260502-WA0004.jpg' },
+        { id: 4, title: 'Personal Journey', category: 'memoir', image: '/images/covers/WA_1777715460739.jpeg' },
+        { id: 5, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
+        { id: 6, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
+        { id: 7, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
+        { id: 8, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
     ];
     
     // Render portfolio grid
