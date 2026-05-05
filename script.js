@@ -15,7 +15,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimation();
     initPortfolioGrid();
     initVideoTestimonials();
-    initCarousel();
 });
 
 // ========== NAVIGATION ==========
@@ -142,23 +141,18 @@ function initCounterAnimation() {
 function initPortfolioGrid() {
     const portfolioGrid = document.getElementById('portfolioGrid');
     
-    // Sample portfolio data - Update with your actual book data
+    // Portfolio data with actual book covers
     const portfolioItems = [
-        { id: 1, title: 'Book Title 1', category: 'fiction', image: '/images/covers/cover-01.jpeg' },
-        { id: 2, title: 'Book Title 2', category: 'nonfiction', image: '/images/covers/cover-02.jpeg' },
-        { id: 3, title: 'Book Title 3', category: 'memoir', image: '/images/covers/cover-03.jpeg' },
-        { id: 4, title: 'Book Title 4', category: 'fiction', image: '/images/covers/cover-04.jpg' },
-        { id: 5, title: 'Book Title 5', category: 'nonfiction', image: '/images/covers/cover-05.jpg' },
-        { id: 6, title: 'Book Title 6', category: 'fiction', image: '/images/covers/cover-06.jpg' },
-        { id: 7, title: 'Book Title 7', category: 'memoir', image: '/images/covers/cover-07.jpg' },
-        { id: 8, title: 'Book Title 8', category: 'nonfiction', image: '/images/covers/cover-08.jpg' },
-        { id: 9, title: 'Book Title 9', category: 'fiction', image: '/images/covers/cover-09.jpg' },
-        { id: 10, title: 'Book Title 10', category: 'memoir', image: '/images/covers/cover-10.jpg' },
-        { id: 11, title: 'Book Title 11', category: 'fiction', image: '/images/covers/cover-11.jpg' },
-        { id: 12, title: 'Book Title 12', category: 'nonfiction', image: '/images/covers/cover-12.jpg' },
-        { id: 13, title: 'Book Title 13', category: 'fiction', image: '/images/covers/cover-13.jpg' },
-        { id: 14, title: 'Book Title 14', category: 'memoir', image: '/images/covers/cover-14.jpg' },
-        { id: 15, title: 'Book Title 15', category: 'nonfiction', image: '/images/covers/cover-15.jpg' }
+        { id: 1, title: 'Classic Novel', category: 'fiction', image: '/images/covers/cover-01.jpeg' },
+        { id: 2, title: 'Business Guide', category: 'nonfiction', image: '/images/covers/cover-02.jpeg' },
+        { id: 3, title: 'Life Story', category: 'memoir', image: '/images/covers/cover-03.jpeg' },
+        { id: 4, title: 'Elara Valerius', category: 'fiction', image: '/images/covers/elara_valerius.jpeg' },
+        { id: 5, title: 'Publishing Insights', category: 'nonfiction', image: '/images/covers/IMG-20260502-WA0004.jpg' },
+        { id: 6, title: 'Personal Journey', category: 'memoir', image: '/images/covers/WA_1777715460739.jpeg' },
+        { id: 7, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
+        { id: 8, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
+        { id: 9, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
+        { id: 10, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
     ];
     
     // Render portfolio grid
@@ -290,65 +284,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
-
-// ========== CAROUSEL ==========
-
-function initCarousel() {
-    const carousel = document.getElementById('carouselSlides');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-    const indicatorContainer = document.getElementById('indicatorContainer');
-    
-    if (!carousel) return;
-    
-    const slides = carousel.querySelectorAll('.carousel-slide');
-    let currentIndex = 0;
-    
-    // Create indicators
-    slides.forEach((_, index) => {
-        const indicator = document.createElement('div');
-        indicator.className = 'indicator' + (index === 0 ? ' active' : '');
-        indicator.addEventListener('click', () => goToSlide(index));
-        indicatorContainer.appendChild(indicator);
-    });
-    
-    function updateCarousel() {
-        slides.forEach((slide, index) => {
-            slide.classList.remove('active', 'prev');
-            if (index === currentIndex) {
-                slide.classList.add('active');
-            } else if (index < currentIndex) {
-                slide.classList.add('prev');
-            }
-        });
-        
-        // Update indicators
-        document.querySelectorAll('.indicator').forEach((ind, index) => {
-            ind.classList.toggle('active', index === currentIndex);
-        });
-    }
-    
-    function nextSlide() {
-        currentIndex = (currentIndex + 1) % slides.length;
-        updateCarousel();
-    }
-    
-    function prevSlide() {
-        currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-        updateCarousel();
-    }
-    
-    function goToSlide(index) {
-        currentIndex = index;
-        updateCarousel();
-    }
-    
-    prevBtn.addEventListener('click', prevSlide);
-    nextBtn.addEventListener('click', nextSlide);
-    
-    // Auto-advance carousel every 5 seconds
-    setInterval(nextSlide, 5000);
-}
 
 // ========== BUTTON INTERACTIONS ==========
 
