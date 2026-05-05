@@ -2,6 +2,11 @@
 // INKFORGE PRESS - MAIN SCRIPT
 // ===================================
 
+// Utility function to capitalize first letter
+function capitalizeFirst(str) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
 // Initialize when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize Feather Icons
