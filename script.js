@@ -158,6 +158,7 @@ function initPortfolioGrid() {
     // Render portfolio grid
     if (portfolioGrid) {
         renderPortfolio(portfolioItems);
+        initPortfolioAnimations();
         
         // Filter functionality
         const filterBtns = document.querySelectorAll('.filter-btn');
@@ -174,6 +175,7 @@ function initPortfolioGrid() {
                     : portfolioItems.filter(item => item.category === filter);
                 
                 renderPortfolio(filteredItems);
+                initPortfolioAnimations();
             });
         });
     }
@@ -199,6 +201,28 @@ function renderPortfolio(items) {
         `;
         
         portfolioGrid.appendChild(portfolioItem);
+    });
+}
+
+function initPortfolioAnimations() {
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.animation = 'portfolioSlideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards';
+            }
+        });
+    }, observerOptions);
+    
+    portfolioItems.forEach(item => {
+        observer.observe(item);
     });
 }
 
