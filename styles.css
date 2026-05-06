@@ -758,80 +758,133 @@ p {
     color: var(--primary);
 }
 
-/* ========== PRICING SECTION ========== */
+/* ========== TEAM SECTION ========== */
 
-.pricing {
+.team {
     max-width: 1200px;
     margin: 0 auto;
     padding: 80px 2rem;
 }
 
-.pricing-grid {
+.team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 3rem;
+    margin-bottom: 4rem;
 }
 
-.pricing-card {
+.team-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.08), rgba(139, 26, 26, 0.02));
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 16px;
     padding: 2rem;
-    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.02));
-    border: 1px solid rgba(212, 175, 55, 0.2);
-    border-radius: 12px;
-    transition: var(--transition);
-    position: relative;
+    text-align: center;
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity: 0;
+    animation: portfolioSlideIn 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
 }
 
-.pricing-card.featured {
-    transform: scale(1.05);
+.team-card:nth-child(1) { animation-delay: 0.05s; }
+.team-card:nth-child(2) { animation-delay: 0.1s; }
+.team-card:nth-child(3) { animation-delay: 0.15s; }
+.team-card:nth-child(4) { animation-delay: 0.2s; }
+.team-card:nth-child(5) { animation-delay: 0.25s; }
+
+.team-card:hover {
+    transform: translateY(-12px) scale(1.03);
+    border-color: rgba(212, 175, 55, 0.6);
+    box-shadow: 0 0 40px rgba(212, 175, 55, 0.3), inset 0 0 20px rgba(212, 175, 55, 0.08);
     background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 26, 26, 0.05));
-    border-color: rgba(212, 175, 55, 0.4);
-    box-shadow: 0 0 40px rgba(212, 175, 55, 0.2);
 }
 
-.badge-popular {
-    position: absolute;
-    top: -15px;
-    right: 20px;
-    padding: 0.5rem 1rem;
+.team-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
     background: linear-gradient(135deg, var(--primary), #f0d96b);
-    color: #0a0a0e;
-    border-radius: 50px;
-    font-size: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
     font-weight: 700;
+    color: #0a0a0e;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
-.plan-name {
-    font-size: 1.5rem;
+.team-card h3 {
+    font-size: 1.4rem;
     font-family: 'Fraunces', serif;
     font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: white;
+}
+
+.team-role {
+    color: var(--primary);
+    font-weight: 600;
+    font-size: 0.95rem;
     margin-bottom: 1rem;
 }
 
-.plan-price {
-    margin-bottom: 2rem;
-}
-
-.currency {
-    font-size: 1.2rem;
+.team-bio {
     color: var(--text-secondary);
-}
-
-.amount {
-    font-size: 3rem;
-    font-weight: 700;
-    font-family: 'Fraunces', serif;
-    color: var(--primary);
-}
-
-.plan-features {
-    list-style: none;
-    margin-bottom: 2rem;
-}
-
-.plan-features li {
-    padding: 0.75rem 0;
-    color: var(--text-secondary);
+    line-height: 1.6;
     font-size: 0.95rem;
+}
+
+/* Quote Cards */
+.quote-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.quote-card {
+    background: linear-gradient(135deg, rgba(212, 175, 55, 0.05), rgba(139, 26, 26, 0.02));
+    border: 2px solid rgba(212, 175, 55, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.quote-card:hover {
+    border-color: rgba(212, 175, 55, 0.5);
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.25);
+    transform: translateY(-8px);
+}
+
+.quote-card i {
+    width: 50px;
+    height: 50px;
+    color: var(--primary);
+    margin-bottom: 1rem;
+    opacity: 0.8;
+}
+
+.quote-card h4 {
+    font-size: 1.1rem;
+    font-family: 'Fraunces', serif;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.quote-card p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.quote-card .btn {
+    margin-top: auto;
 }
 
 /* ========== FINAL CTA SECTION ========== */
@@ -962,8 +1015,8 @@ p {
         grid-template-columns: 1fr;
     }
 
-    .pricing-card.featured {
-        transform: scale(1);
+    .quote-grid {
+        grid-template-columns: 1fr;
     }
 
     .footer-content {
