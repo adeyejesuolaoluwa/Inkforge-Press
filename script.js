@@ -149,13 +149,21 @@ function initPortfolioGrid() {
     // Portfolio data with actual book covers
     const portfolioItems = [
         { id: 1, title: 'Classic Novel', category: 'fiction', image: '/images/covers/cover-01.jpeg' },
-        { id: 2, title: 'Elara Valerius', category: 'fiction', image: '/images/covers/elara_valerius.jpeg' },
-        { id: 3, title: 'Publishing Insights', category: 'nonfiction', image: '/images/covers/IMG-20260502-WA0004.jpg' },
-        { id: 4, title: 'Personal Journey', category: 'memoir', image: '/images/covers/WA_1777715460739.jpeg' },
-        { id: 5, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
-        { id: 6, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
-        { id: 7, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
-        { id: 8, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
+        { id: 2, title: 'Black Hollow Deadly Silences', category: 'fiction', image: '/images/covers/black_hollow_and_the_deadly_silences.jpeg' },
+        { id: 3, title: 'Black Hollow Ghostwriter', category: 'fiction', image: '/images/covers/black_hollow_and_the_ghostwriters\'s_otebook.jpeg' },
+        { id: 4, title: 'Elara Valerius', category: 'fiction', image: '/images/covers/elara_valerius.jpeg' },
+        { id: 5, title: 'Weapon Training', category: 'fiction', image: '/images/covers/he_was_trained_to_be_a_weapon.jpeg' },
+        { id: 6, title: 'Publishing Insights', category: 'nonfiction', image: '/images/covers/IMG-20260502-WA0004.jpg' },
+        { id: 7, title: 'Real World Dog Training', category: 'nonfiction', image: '/images/covers/real_world_dog_traning.jpeg' },
+        { id: 8, title: 'Strategic Startup Success', category: 'nonfiction', image: '/images/covers/strategic_startup_susses.jpeg' },
+        { id: 9, title: 'The Confluence Daughter', category: 'fiction', image: '/images/covers/the_confluences_dauther.jpeg' },
+        { id: 10, title: 'The Successful Thinker', category: 'nonfiction', image: '/images/covers/the_susseccseful_thanker.jpeg' },
+        { id: 11, title: 'Some Hearts Never Stop', category: 'memoir', image: '/images/covers/some_heart_never_stop_wating.jpeg' },
+        { id: 12, title: 'Personal Journey', category: 'memoir', image: '/images/covers/WA_1777715460739.jpeg' },
+        { id: 13, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
+        { id: 14, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
+        { id: 15, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
+        { id: 16, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
     ];
     
     // Render portfolio grid
