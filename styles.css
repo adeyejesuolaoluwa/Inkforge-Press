@@ -815,6 +815,22 @@ p {
     box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
 }
 
+.team-image {
+    width: 140px;
+    height: 140px;
+    border-radius: 12px;
+    object-fit: cover;
+    margin-bottom: 1.5rem;
+    border: 3px solid rgba(212, 175, 55, 0.4);
+    box-shadow: 0 8px 32px rgba(212, 175, 55, 0.25);
+    transition: all 0.3s ease;
+}
+
+.team-card:hover .team-image {
+    border-color: rgba(212, 175, 55, 0.8);
+    box-shadow: 0 12px 40px rgba(212, 175, 55, 0.4);
+}
+
 .team-card h3 {
     font-size: 1.4rem;
     font-family: 'Fraunces', serif;
