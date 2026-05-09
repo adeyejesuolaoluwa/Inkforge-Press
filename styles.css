@@ -720,6 +720,21 @@ p {
     color: var(--text-muted);
 }
 
+/* Video Testimonial Player */
+.video-testimonial-player {
+    width: 100%;
+    margin-bottom: 3rem;
+    opacity: 0;
+    animation: slideInUp 0.8s ease-out forwards;
+}
+
+.video-testimonial-player video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
 /* Static Testimonials */
 .testimonials-static {
     display: grid;
