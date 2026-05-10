@@ -163,7 +163,8 @@ function initPortfolioGrid() {
         { id: 13, title: 'Adventure Tales', category: 'fiction', image: '/images/covers/WA_1777715521129.jpeg' },
         { id: 14, title: 'Industry Handbook', category: 'nonfiction', image: '/images/covers/WA_1777715531665 (1).jpeg' },
         { id: 15, title: 'Heritage & Legacy', category: 'memoir', image: '/images/covers/WA_1777715552540.jpeg' },
-        { id: 16, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' }
+        { id: 16, title: 'Bestseller Collection', category: 'fiction', image: '/images/covers/WA_1777715566803.jpeg' },
+        { id: 17, title: 'New Release', category: 'fiction', image: '/images/covers/IMG-20260510-WA0018.jpg' }
     ];
     
     // Render portfolio grid
